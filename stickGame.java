@@ -382,9 +382,9 @@ public class Tikkupeli {
     public Tikkupeli() {
         this.kierros = 1;
         this.lukija = new Scanner(System.in);
-        this.aly1 = new AI("Neuromancer");
+        this.aly1 = new AI("Abel");
         this.aly1.Hashh();
-        this.aly2 = new AI("Wintermute");
+        this.aly2 = new AI("Babel");
         this.aly2.Hashh();
     }
 
