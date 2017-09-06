@@ -96,35 +96,28 @@ public class SalasananArpoja {
 
             double divider = (double) random.nextInt(101);
 
-//            System.out.println("Divider: "+divider+"/ ");
             if (divider >= 0 && divider <= this.kirjaimia) {
                 String kirjain = String.valueOf(("abcdefghijklmnopqrstuvwxyz".charAt(kirjainNumeroLista.get(pituusola))));
-//                String kirjain = String.valueOf(("abcdefghijklmnopqrstuvwxyzéèêëïñáàâäöüíìîòóõôùúûý".charAt(kirjainNumeroLista.get(pituusola))));
                 this.salasana.add(kirjain);
                 pituusola++;
-//                System.out.println("aa");
             }
 
             if (divider >= (this.kirjaimia + 1) && divider <= this.caps) {
                 String KIRJAIN = String.valueOf(("ABCDEFGHIJKLMNOPQRSTUVWXYZ".charAt(kirjainNumeroLista.get(pituusola))));
-//                String KIRJAIN = String.valueOf(("ABCDEFGHIJKLMNOPQRSTUVWXYZÁÀÂÄÉÈÊËÍÌÎÏÓÒÔÖÕÚÙÛÜÝ".charAt(kirjainNumeroLista.get(pituusola))));
                 this.salasana.add(KIRJAIN);
                 pituusola++;
-//                System.out.println("AA");
             }
 
             if (divider >= (this.caps + 1) && divider <= this.numeroita) {
                 String numero = String.valueOf("0123456789".charAt(numeroNumeroLista.get(pituusola)));
                 this.salasana.add(numero);
                 pituusola++;
-//                System.out.println("22");
             }
 
             if (divider >= (this.numeroita + 1) && divider <= this.merkkeja) {
                 String merkki = String.valueOf("!\"@#£¤$%€&/{([)]=}?\\+´`¨~^'*-_.,:;<>|§½".charAt(merkkiNumeroLista.get(pituusola)));
                 this.salasana.add(merkki);
                 pituusola++;
-//                System.out.println("##");
             }
 
         }
@@ -149,19 +142,17 @@ public class SalasananArpoja {
 
     }
 
-    public String sanakirjasalasana() {
+    
+  /*  public String sanakirjasalasana() {
         String fileName = "words.txt";
         ArrayList<String> kaikkisanat = new ArrayList();
         
-        // This will reference one line at a time
         String line = null;
 
         try {
-            // FileReader reads text files in the default encoding.
             FileReader fileReader
                     = new FileReader(fileName);
 
-            // Always wrap FileReader in BufferedReader.
             BufferedReader bufferedReader
                     = new BufferedReader(fileReader);
 
@@ -169,7 +160,6 @@ public class SalasananArpoja {
                 kaikkisanat.add(line);
             }
 
-            // Always close files.
             bufferedReader.close();
         } catch (FileNotFoundException ex) {
             System.out.println(
@@ -179,10 +169,10 @@ public class SalasananArpoja {
             System.out.println(
                     "Error reading file '"
                     + fileName + "'");
-            // Or we could just do this: 
-            // ex.printStackTrace();
-        }
-//        System.out.println(kaikkisanat.size());
+        } 
+*/
+
+            
         int numero = this.random.nextInt(kaikkisanat.size());
         String sana = kaikkisanat.get(numero);
         return sana;
@@ -240,13 +230,12 @@ public class Kayttis {
             if (randomchance > this.kirjasanoja) {
                 sana = this.arpa.luoSalasana();
             } else {
-                sana = this.arpa.sanakirjasalasana();
-//                System.out.println("Rules for Draw & Stud Poker");
+       //        sana = this.arpa.sanakirjasalasana();
             }
             if (this.myosNimet) {
-                KayttajanimenArpoja ka = new KayttajanimenArpoja();
-                String usern = ka.arvo();
-                sana = usern + "\t" + " : " + "\t" + sana;
+       //         KayttajanimenArpoja ka = new KayttajanimenArpoja();
+       //         String usern = ka.arvo();
+       //         sana = usern + "\t" + " : " + "\t" + sana;
             }
 
             System.out.println(sana);
@@ -297,16 +286,16 @@ public class Kayttis {
             this.myosNimet = false;
         //}
 
-        System.out.println("Sanakirja-salasanojen osuus? [0-100%]");
+    //    System.out.println("Sanakirja-salasanojen osuus? [0-100%]");
 
-        int sanakirjoja = Integer.parseInt(this.scanner.nextLine());
+   //     int sanakirjoja = Integer.parseInt(this.scanner.nextLine());
 
-        if (sanakirjoja < 0 || sanakirjoja > 100) {
-            System.out.println("Väärin, luku väliltä 0-100, ääliö.");
+     //   if (sanakirjoja < 0 || sanakirjoja > 100) {
+     //       System.out.println("Väärin, luku väliltä 0-100, ääliö.");
             this.kirjasanoja = 0;
-        } else {
-            this.kirjasanoja = sanakirjoja;
-        }
+    //    } else {
+      //      this.kirjasanoja = sanakirjoja;
+        //}
 
         System.out.println("Tiedostonimi: ");
         this.fielname = this.scanner.nextLine();
